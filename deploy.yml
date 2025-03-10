@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blue-deployment
+  name: green-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: my-app
-      version: blue
+      version: green
   template:
     metadata:
       labels:
         app: my-app
-        version: blue
+        version: green
     spec:
       containers:
         - name: my-app-container
@@ -27,7 +27,7 @@ metadata:
 spec:
   selector:
     app: my-app
-    version: blue  # Start with pointing to the blue version
+    version: green  # Start with pointing to the blue version
   ports:
     - port: 80
       targetPort: 80
